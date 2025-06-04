@@ -1,0 +1,65 @@
+<app-sidebar></app-sidebar>
+<div style="width: 1200px; margin-left: 300px" class="d-block">
+  <title>Manage Orders</title>
+
+  <header class="my-4">
+    <h1 class="text-center text-primary">Manage Orders</h1>
+  </header>
+
+  <div class="table-responsive">
+    <table
+      class="table table-dark table-hover table-bordered text-center align-middle"
+    >
+      <thead class="table-light text-dark">
+        <tr>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (order of orders; track $index) {
+
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.customer.name }}</td>
+          <td>
+            <span
+              *ngIf="order.status === 'success'"
+              class="badge bg-success text-dark"
+              >Confirmed</span
+            >
+            <span
+              *ngIf="order.status === 'pending'"
+              class="badge bg-warning text-dark"
+              >Pending</span
+            >
+            <span
+              *ngIf="order.status === 'rejected'"
+              class="badge bg-danger text-dark"
+              >Rejected</span
+            >
+          </td>
+          <td>
+            <button
+              (click)="confirmOrder(order.id)"
+              [disabled]="order.status !== 'pending'"
+              class="btn btn-success btn-sm me-2"
+            >
+              Confirm
+            </button>
+            <button
+              (click)="rejectOrder(order.id)"
+              [disabled]="order.status !== 'pending'"
+              class="btn btn-danger btn-sm"
+            >
+              Reject
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

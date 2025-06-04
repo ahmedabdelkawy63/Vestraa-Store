@@ -1,0 +1,115 @@
+/* Background with fade-in */
+body {
+  background-color: #212529;
+  animation: fadeInBackground 2s ease-out;
+}
+
+/* Centered content */
+.text-center {
+  max-width: 600px;
+}
+
+/* Box shadow for depth */
+.shadow-lg {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom teal button with hover scaling */
+.btn-teal {
+  background-color: #008080;
+  border-color: #006f6f;
+  transition: all 0.3s ease-in-out;
+  animation: bounceIn 1s ease-out;
+}
+.btn-teal:hover {
+  background-color: #006666;
+  border-color: #004d4d;
+  animation: pulse 0.6s infinite;
+}
+
+/* Fade-in for text and other elements */
+.animate__animated {
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+
+/* Image animations: zoom + float */
+.img-animate {
+  animation: zoomFadeIn 1.2s ease-out, float 3s ease-in-out infinite;
+}
+
+/* Keyframes Section */
+@keyframes fadeInBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

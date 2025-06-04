@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">Vestraa</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarNav"
+    >
+      <!-- القائمة الأساسية -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/products']">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/cart']">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/wishlist']">Wishlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/myorders']">My Orders</a>
+        </li>
+      </ul>
+
+      <!-- القسم الجانبي (الملف الشخصي + تسجيل الخروج) -->
+      <app-loader *ngIf="isLoading(); else ready"></app-loader>
+      <ng-template #ready>
+        <div class="d-flex align-items-center">
+          <a
+            *ngIf="!isloged()"
+            class="btn btn-outline-primary me-2"
+            (click)="login()"
+            >Login</a
+          >
+          <a *ngIf="!isloged()" class="btn btn-primary" (click)="register()"
+            >Register</a
+          >
+
+          <a
+            [routerLink]="['/profile']"
+            class="d-flex align-items-center text-decoration-none me-3"
+          >
+            <div *ngIf="isloged()" class="profileDiv d-flex align-items-center">
+              <span
+                *ngIf="isloged()"
+                [routerLink]="['/profile']"
+                class="user-name me-2"
+              >
+              </span>
+              <img
+                *ngIf="isloged()"
+                src="/profile.png"
+                alt="Profile"
+                style="width: 25px; height: 25px; border-radius: 50%"
+              />
+            </div>
+          </a>
+          <a
+            *ngIf="isloged()"
+            class="btn btn-outline-secondary"
+            (click)="logout()"
+            >Logout</a
+          >
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</nav>

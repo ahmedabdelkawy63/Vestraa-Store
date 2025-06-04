@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="container">
+  <div class="table-container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (order of myOrders; track $index) {
+
+          <tr>
+            <td class="order-id">{{ order.id }}</td>
+            <td>01 Jul, 2022</td>
+            <td class="amount">${{ order.total }}</td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'bg-warning text-dark': order.status === 'pending',
+                  'bg-success text-light': order.status === 'success',
+                  'bg-danger text-light': order.status === 'rejected'
+                }"
+              >
+                {{ order.status }}
+              </span>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button [routerLink]="['/products']" class="btn continue-shopping-btn">
+    Continue Shopping →
+  </button>
+</div>
