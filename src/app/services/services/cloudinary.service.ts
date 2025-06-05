@@ -14,9 +14,9 @@ export class CloudinaryService {
     const url = `https://api.cloudinary.com/v1_1/${this.cloudName}/image/upload`;
     const formData = new FormData();
 
-    formData.append('file', file); // ✅ لازم يكون File مش فاضي
+    formData.append('file', file);
     formData.append('upload_preset', this.uploadPreset);
-    formData.append('folder', 'samples/ecommerce'); // ✅ مهم جدًا لو محدد folder في الإعدادات
+    formData.append('folder', 'samples/ecommerce');
 
     return this.http.post(url, formData);
   }

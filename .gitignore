@@ -42,6 +42,8 @@ testem.log
 Thumbs.db
 # Environment files
 src/environments/*.ts
+src/environment/environment.ts
+
 
 # IDE files
 .vscode/

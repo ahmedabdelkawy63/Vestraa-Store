@@ -38,8 +38,8 @@ export class AddProductComponent implements OnInit {
       price: [
         '',
         [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)],
-      ], // رقم مع إمكانية وجود 2 رقم عشري
-      quantity: ['', [Validators.required, Validators.min(1)]], // كمية لازم تكون 1 أو أكثر
+      ],
+      quantity: ['', [Validators.required, Validators.min(1)]],
       description: ['', [Validators.required, Validators.minLength(10)]],
       imageCover: ['', Validators.required],
     });
@@ -50,7 +50,6 @@ export class AddProductComponent implements OnInit {
     if (file) {
       this.selectedFile = file;
 
-      // Preview
       const reader = new FileReader();
       reader.onload = () => {
         this.previewUrl = reader.result;

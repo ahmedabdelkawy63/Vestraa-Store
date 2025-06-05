@@ -1,4 +1,3 @@
-/* From Uiverse.io by kosedagyazilim */
 .button {
   display: inline-block;
   padding: 12px 28px;
@@ -61,10 +60,9 @@
 .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ده بيخلي الصورة تغطي المساحة كلها وتملأ البرواز */
-  display: block; /* عشان يتخلص من الفراغ تحت الصورة */
+  object-fit: cover;
+  display: block;
 }
-/* From Uiverse.io by absoluteSTrange */
 .buttonDelete {
   padding: 15px 35px;
   border-radius: 10px;
@@ -84,12 +82,10 @@
 
 .buttonDelete:active {
   background-color: rgb(255, 56, 86);
-  /*50, 168, 80*/
   box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
   transform: translateY(5px);
   transition: 200ms;
 }
-/* From Uiverse.io by vinodjangid07 */
 .Btn {
   position: relative;
   display: flex;
@@ -166,13 +162,11 @@
 ::placeholder {
   color: #abb2bf;
 }
-/* From Uiverse.io by Pradeepsaranbishnoi */
 :focus {
   outline: 0;
   border-color: #2260ff;
   box-shadow: 0 0 0 4px #b5c9fc;
 }
-/* From Uiverse.io by vinodjangid07 */
 .cardDelete {
   width: 300px;
   height: fit-content;
@@ -184,12 +178,12 @@
   justify-content: center;
   gap: 20px;
   padding: 30px;
-  position: fixed; /* هنا */
-  top: 50%; /* مركز الشاشة عمودياً */
-  left: 50%; /* مركز الشاشة أفقياً */
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
-  z-index: 9999; /* يظهر فوق باقي العناصر */
+  z-index: 9999;
 }
 
 .card-content {

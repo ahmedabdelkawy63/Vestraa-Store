@@ -23,12 +23,9 @@ export class StatisticsComponent implements OnInit {
   ) {}
   async ngOnInit(): Promise<void> {
     this.fetchAllProducts();
-    // this.fetchAllcategories();
     this.getAllOrders();
     this.pendingOrdersCount = await this.ordersService.getPendingOrdersCount();
     this.loadOrders();
-
-    // بعد ما تجيب كل الأوردرات
   }
   async loadOrders() {
     const ordersRef = collection(this.Firestore, 'orders');
@@ -52,11 +49,7 @@ export class StatisticsComponent implements OnInit {
     this.orders = await this.ordersService.fetchOrders();
     console.log(this.orders.length);
   }
-  // async fetchAllcategories(): Promise<void> {
-  //   const allCate = await this.fetchAllproducts.fetchCategories();
-  //   this.categories = [...allCate];
-  //   console.log(this.categories);
-  // }
+
   pendingOrdersCount = 0;
   successOrdersCount: number = 0;
 }

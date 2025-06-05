@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private cartService: CartServiceService,
     private firestore: Firestore,
-    private auth: Auth // ✅ أضف ده
+    private auth: Auth
   ) {
     this.cartService.subtotal$.subscribe((value) => (this.subtotal = value));
     this.cartService.total$.subscribe((value) => (this.total = value));
@@ -49,7 +49,7 @@ export class CheckoutComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       mobile: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[0-9\-\+\s]*$/), // يسمح بالأرقام وال+ و- والفراغ
+        Validators.pattern(/^[0-9\-\+\s]*$/),
         Validators.minLength(7),
         Validators.maxLength(15),
       ]),
@@ -57,7 +57,7 @@ export class CheckoutComponent implements OnInit {
       city: new FormControl(''),
       zip: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^\d{5}$/), // 5 أرقام فقط
+        Validators.pattern(/^\d{5}$/),
       ]),
       address: new FormControl(''),
     });
@@ -75,7 +75,7 @@ export class CheckoutComponent implements OnInit {
       const orderData = {
         customer: {
           ...this.myForm.value,
-          userId: currentUser.uid, // ✅ كده تمام
+          userId: currentUser.uid,
         },
         cart: this.cart,
         subtotal: this.subtotal,

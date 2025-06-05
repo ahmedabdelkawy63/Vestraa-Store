@@ -90,7 +90,6 @@ export class RegisterComponent {
     const valid = hasUpperCase && hasLowerCase && hasNumeric && hasSpecial;
     return !valid ? { weak: true } : null;
   }
-  // Custom validator to check if password and confirmPassword match
   passwordsMatchValidator(group: AbstractControl) {
     const password = group.get('password')?.value;
     const confirmPassword = group.get('confirmPassword')?.value;
@@ -117,7 +116,6 @@ export class RegisterComponent {
         if (user) {
           await updateProfile(user, { displayName: name });
 
-          // 🟢 حفظ بيانات المستخدم في Firestore
           await setDoc(doc(this.firestore, 'users', user.uid), {
             name,
             email,
@@ -132,7 +130,6 @@ export class RegisterComponent {
       .catch((err) => {
         console.error('Registration error:', err);
 
-        // هنا نعرض رسالة الخطأ مع كود الخطأ
         switch (err.code) {
           case 'auth/email-already-in-use':
             this.error = 'This email is already in use.';

@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
 
   isLoading = this.authService.isAuthLoading;
 
-  // ✅ Signal ديناميكية لحالة تسجيل الدخول
-
   slides = [
     { imageUrl: '/f1.jpg', title: 'Slide 1' },
     { imageUrl: '/f2.jpg', title: 'Slide 2' },
@@ -45,7 +43,7 @@ export class HomeComponent implements OnInit {
 
   logout() {
     this.authService.logout().subscribe(() => {
-      localStorage.removeItem('uid'); // 🧹 امسح uid
+      localStorage.removeItem('uid');
 
       this.router.navigate(['/login']);
     });

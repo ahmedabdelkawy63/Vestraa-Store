@@ -8,18 +8,13 @@ import { environment } from './environment/environment';
 import { routes } from './app/app.routes';
 import { importProvidersFrom } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; // استيراد هنا
-
+import { HttpClientModule } from '@angular/common/http';
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    importProvidersFrom(
-      ReactiveFormsModule,
-      FormsModule,
-      HttpClientModule // اضف هذا هنا
-    ),
+    importProvidersFrom(ReactiveFormsModule, FormsModule, HttpClientModule),
   ],
 });

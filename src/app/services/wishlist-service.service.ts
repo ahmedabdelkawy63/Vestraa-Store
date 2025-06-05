@@ -17,7 +17,7 @@ export class WishlistService {
   constructor(private firestore: Firestore, private auth: Auth) {}
 
   async addToWishlist(product: any): Promise<void> {
-    const user = this.auth.currentUser; // استخدم currentUser من الكائن auth
+    const user = this.auth.currentUser;
     if (user) {
       const wishlistDocRef = doc(this.firestore, 'wishlists', user.uid);
       const docSnap = await getDoc(wishlistDocRef);

@@ -1,5 +1,3 @@
-/*  */
-
 .hero::before {
   content: "";
   position: absolute;
@@ -7,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* تغميقة خفيفة */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 a {
@@ -19,7 +17,6 @@ a {
   z-index: 1;
 }
 
-/* From Uiverse.io by JohnnyCSilva */
 .card {
   width: 195px;
   height: 285px;
@@ -101,7 +98,6 @@ a {
   color: #e81cff;
 }
 
-/* From Uiverse.io by elijahgummer */
 .footer {
   width: 100%;
   height: 100%;
@@ -119,8 +115,8 @@ a {
   height: 200%;
   background: radial-gradient(circle, #3498db 10%, transparent 20%),
     radial-gradient(circle, transparent 10%, #3498db 20%);
-  background-size: 30px 30px; /* Adjust the size of the pattern */
-  animation: moveBackground 8s linear infinite; /* Adjust the animation duration and timing function */
+  background-size: 30px 30px;
+  animation: moveBackground 8s linear infinite;
 }
 
 @keyframes moveBackground {
@@ -131,7 +127,6 @@ a {
     transform: translate(20%, 20%);
   }
 }
-/* From Uiverse.io by felipesntr */
 .allProduct {
   font-size: 1rem;
   padding: 0.8em 2em;
@@ -147,8 +142,23 @@ a {
 .allProduct:hover {
   transform: translate(5px, -5px);
 }
-/* From Uiverse.io by david-mohseni */
+@media (max-width: 844px) {
+  .product-card {
+    height: 250px;
+  }
+  .con {
+    margin-left: 70px;
+  }
 
+  .textBox {
+    padding: 0.5rem !important;
+  }
+
+  .textBox p,
+  .textBox span {
+    font-size: 0.9rem !important;
+  }
+}
 .wrapper .icon {
   position: relative;
   background: #fff;
@@ -226,11 +236,6 @@ a {
   color: #fff;
 }
 
-/* #####################3
- */
-/* about section  */
-
-/* From Uiverse.io by ilkhoeri */
 .wrapperAbout {
   width: 100%;
   height: 300px;
@@ -241,7 +246,6 @@ a {
   align-items: center;
   justify-content: center;
   margin-left: 25px;
-  /* overflow: hidden; */
 }
 
 .inner {
@@ -320,4 +324,6 @@ a {
 }
 .rating i {
   color: gold;
+}
+@media (max-width: 844px) {
 }

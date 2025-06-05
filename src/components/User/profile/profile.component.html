@@ -1,14 +1,5 @@
 <app-header></app-header>
 <div class="my-5 container w-140 d-flex justify-content-center">
-  <!-- Loading Spinner -->
-  <!-- <div *ngIf="loading" class="d-flex justify-content-center align-items-center w-100">
-    <div class="spinner-border spiner" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div> -->
-
-  <!-- Profile Card -->
-  <!-- *ngIf="!loading && userData" -->
   <div
     *ngIf="userData; else loading"
     class="profile-container fade-in-up w-100"
@@ -30,11 +21,6 @@
       </li>
     </ul>
   </div>
-
-  <!-- No Data -->
-  <!-- <div *ngIf="!loading && !userData" class="text-center text-danger w-100">
-    <p>No user data found.</p>
-  </div> -->
 </div>
 <ng-template #loading>
   <app-loader></app-loader>

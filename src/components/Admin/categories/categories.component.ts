@@ -42,12 +42,12 @@ export class CategoriesComponent implements OnInit {
         name: this.editedCategoryName,
       });
       this.isEditing = false;
-      this.getAllCategories(); // تحديث القائمة بعد التعديل
+      this.getAllCategories();
     }
   }
 
   async deleteCategory(cat: any): Promise<void> {
     await this.cate.deleteCategory(cat.id);
-    this.getAllCategories(); // تحديث القائمة بعد الحذف
+    this.getAllCategories();
   }
 }

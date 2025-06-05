@@ -37,7 +37,7 @@ export class ViewProductsComponent implements OnInit {
   ) {}
 
   async getProducts(): Promise<void> {
-    this.isLoading = true; // ✅ Start loader
+    this.isLoading = true;
     try {
       const allProducts = await this.AllProducts.fetchProducts();
       this.products = allProducts.map((doc: any) => ({
@@ -48,7 +48,7 @@ export class ViewProductsComponent implements OnInit {
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {
-      this.isLoading = false; // ✅ Stop loader
+      this.isLoading = false;
     }
   }
 
@@ -87,10 +87,10 @@ export class ViewProductsComponent implements OnInit {
   }
   showPopup: boolean = false;
   openCartPopup() {
-    this.showPopup = true; // شغل البوب أب
+    this.showPopup = true;
 
     setTimeout(() => {
-      this.showPopup = false; // بعد 5 ثواني، أخفي البوب أب
+      this.showPopup = false;
     }, 3000);
   }
 }

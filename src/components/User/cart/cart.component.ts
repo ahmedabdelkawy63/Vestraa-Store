@@ -61,9 +61,8 @@ export class CartComponent {
       (acc, item) => acc + item.price * (item.quantity || 1),
       0
     );
-    // افترض أنك تضبط الخصم والشحن في مكان آخر أو ثابتين هنا:
-    this.shipping = 4.99; // مثال قيمة الشحن
-    this.discount = 3.99; // مثال قيمة الخصم
+    this.shipping = 4.99;
+    this.discount = 3.99;
 
     this.total = this.subtotal + this.shipping - this.discount;
     this.cartService.updateSubtotal(this.subtotal);

@@ -11,7 +11,7 @@ export class AdminGuard implements CanActivate {
     return new Promise((resolve) => {
       onAuthStateChanged(this.auth, (user) => {
         if (user && user.email === 'owner@admin.com') {
-          resolve(true); // ✅ هو الأدمن فعلاً
+          resolve(true);
         } else {
           this.router.navigate(['/unauthorized']);
           resolve(false);

@@ -18,7 +18,7 @@ import { doc, Firestore, getDoc, updateDoc } from '@angular/fire/firestore';
   styleUrls: ['./edit-product.component.css'],
 })
 export class EditProductComponent {
-  imagePreviewUrl: string = ''; // لعرض صورة المنتج الحالية
+  imagePreviewUrl: string = '';
 
   productId!: string;
   editProductForm!: FormGroup;
@@ -39,14 +39,12 @@ export class EditProductComponent {
       console.log('Form dirty?', this.editProductForm.dirty);
     });
 
-    // الحصول على معرف المنتج من رابط الصفحة
     this.productId = this.route.snapshot.paramMap.get('id')!;
     if (this.productId) {
       this.loadProductData(this.productId);
     }
   }
 
-  // إنشاء النموذج مع تعريف الحقول وال Validators
   initForm() {
     this.editProductForm = this.fb.group({
       id: ['', [Validators.required, Validators.minLength(3)]],
@@ -62,7 +60,6 @@ export class EditProductComponent {
     });
   }
 
-  // تحميل بيانات المنتج من Firestore وتعبئة النموذج بها
   async loadProductData(id: string) {
     const docRef = doc(this.firestore, 'products', id);
     const docSnap = await getDoc(docRef);
@@ -78,13 +75,12 @@ export class EditProductComponent {
         description: data['description'],
         imageCover: data['imageCover'] || '',
       });
-      this.imagePreviewUrl = data['imageCover']; // عرض الصورة فقط
+      this.imagePreviewUrl = data['imageCover'];
     } else {
       console.warn('Product not found!');
     }
   }
 
-  // تحديث بيانات المنتج
   async updateProduct() {
     if (this.editProductForm.valid) {
       const updatedProduct = this.editProductForm.value;
@@ -103,7 +99,6 @@ export class EditProductComponent {
     }
   }
 
-  // تحديث صورة العرض عند اختيار صورة جديدة من الملف
   onFileSelected(event: Event): void {
     const fileInput = event.target as HTMLInputElement;
     if (fileInput.files && fileInput.files[0]) {

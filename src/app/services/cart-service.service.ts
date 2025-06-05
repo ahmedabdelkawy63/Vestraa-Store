@@ -33,19 +33,19 @@ export class CartServiceService {
           item.id === product.id
             ? {
                 ...item,
-                quantity: (item.quantity || 1) + 1, // فقط نزيد 1 على الموجود
+                quantity: (item.quantity || 1) + 1,
               }
             : item
         );
         await updateDoc(cartDocRef, { items: newItems });
       } else {
-        const newProduct = { ...product, quantity: 1 }; // نضيف الكمية هنا بوضوح
+        const newProduct = { ...product, quantity: 1 };
         await updateDoc(cartDocRef, {
           items: arrayUnion(newProduct),
         });
       }
     } else {
-      const newProduct = { ...product, quantity: 1 }; // في أول مرة، نضيف الكمية أيضًا
+      const newProduct = { ...product, quantity: 1 };
       await setDoc(cartDocRef, {
         items: [newProduct],
       });
@@ -82,7 +82,6 @@ export class CartServiceService {
 
     const items = docSnap.data()?.['items'] || [];
 
-    // استبدل المنتج القديم بالجديد مع تحديث الكمية
     const newItems = items.map((item: any) =>
       item.id === updatedItem.id ? updatedItem : item
     );
@@ -120,7 +119,6 @@ export class CartServiceService {
     const cartDocRef = doc(this.firestore, 'carts', user.uid);
     await setDoc(cartDocRef, { items: [] }, { merge: true });
 
-    // حدث القيم المحلية عشان تعكس السلة الفاضية
     this.updateSubtotal(0);
     this.updateTotal(0);
     this.updateShipping(0);

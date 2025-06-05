@@ -24,7 +24,7 @@ export class WishlistComponent {
   }
   remove(product: any) {
     this.wishlistservice.removeFromWishlist(product).then(() => {
-      this.loadWishlist(); // بعد الحذف، حدث القائمة عشان تظهر بدون المنتج المحذوف
+      this.loadWishlist();
     });
   }
 }

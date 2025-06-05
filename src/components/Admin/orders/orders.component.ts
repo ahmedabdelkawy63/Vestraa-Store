@@ -37,7 +37,7 @@ export class OrdersComponent implements OnInit {
   async confirmOrder(orderId: string) {
     try {
       await this.ordersService.updateOrderStatus(orderId, 'success');
-      this.getAllOrders(); // تحديث الواجهة بعد التعديل
+      this.getAllOrders();
     } catch (err) {
       console.error('Error confirming order', err);
     }
@@ -46,7 +46,7 @@ export class OrdersComponent implements OnInit {
   async rejectOrder(orderId: string) {
     try {
       await this.ordersService.updateOrderStatus(orderId, 'rejected');
-      this.getAllOrders(); // تحديث الواجهة بعد التعديل
+      this.getAllOrders();
     } catch (err) {
       console.error('Error rejecting order', err);
     }

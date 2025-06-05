@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
   pendingDeleteIndex: number | null = null;
 
   openDeleteModal(docId: string, index: number) {
-    console.log('فتح المودال ✅', docId, index);
+    console.log('✅', docId, index);
 
     this.pendingDeleteDocId = docId;
     this.pendingDeleteIndex = index;
@@ -56,14 +56,13 @@ export class ProductsComponent implements OnInit {
         await this.fetchProducts.deleteProduct(this.pendingDeleteDocId);
         this.products.splice(this.pendingDeleteIndex, 1);
       } catch (error) {
-        console.error('❌ فشل في الحذف:', error);
+        console.error('❌ ', error);
       }
-      this.cancelDelete(); // تغلق المودال
+      this.cancelDelete();
     }
   }
 
   editProduct(docId: string) {
-    // نوجه المستخدم لصفحة تعديل المنتج مع تمرير docId في الرابط
     this.router.navigate(['/dashboard/editProduct', docId]);
   }
 }

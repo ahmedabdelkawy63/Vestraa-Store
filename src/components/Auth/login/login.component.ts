@@ -44,7 +44,6 @@ export class LoginComponent {
 
     signInWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
-        // userCredential.user موجود بعد تسجيل الدخول
         const user = userCredential.user;
         localStorage.setItem('uid', userCredential.user.uid);
 

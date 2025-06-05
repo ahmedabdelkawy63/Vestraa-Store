@@ -41,8 +41,6 @@
     </tbody>
   </table>
 
-  <!-- الطبقة الخلفية -->
-
   <div *ngIf="isEditing" class="parent">
     <div class="overlay"></div>
     <div class="inpDiv">
@@ -52,7 +50,6 @@
         name="text"
         type="text"
       />
-      <!-- From Uiverse.io by KhelVers -->
       <button (click)="updateCategory()" class="update">Update</button>
       <span (click)="isEditing = false" class="material-symbols-outlined">
         close
@@ -60,4 +57,3 @@
     </div>
   </div>
 </div>
-<!-- From Uiverse.io by garerim -->

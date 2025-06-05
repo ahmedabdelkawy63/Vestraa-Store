@@ -1,10 +1,8 @@
-/* From Uiverse.io by kamehame-ha */
-
 .cards {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  position: absolute; /* أو fixed لو عايز يفضل ثابت مع التمرير */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-38%, -50%);

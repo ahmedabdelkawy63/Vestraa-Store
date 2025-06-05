@@ -1,6 +1,5 @@
 <app-header></app-header>
 <div class="my-5 container">
-  <!-- From Uiverse.io by akshat-patel28 -->
   @if (showPopup) {
   <div class="cardPop">
     <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +45,6 @@
   </div>
   }
 
-  <!-- From Uiverse.io by OnCloud125252 -->
   <div class="firstPart d-flex ms-5 justify-content-evenly">
     <div class="inputBox_container ms-2">
       <svg
@@ -68,7 +66,6 @@
         (input)="handleSearch(inp.value)"
       />
     </div>
-    <!-- From Uiverse.io by Pradeepsaranbishnoi -->
     <div class="ms-5 mydict w-50">
       <div>
         <label>
@@ -104,7 +101,6 @@
           <span>Electronics</span>
         </label>
 
-        <!-- اختياري: زر "الكل" -->
         <label>
           <input
             value="All"
@@ -124,17 +120,13 @@
     <section id="products" class="py-5 my-5">
       <div class="container">
         <div class="row justify-content-center g-4">
-          <!-- كارت منتج -->
-
           @for (prd of filteredProducts.reverse(); track prd.id) {
 
           <div
             routerLinkActive="router-link-active"
             class="col-sm-6 col-md-4 col-lg-3 col-xl-2 my-4 mx-3"
           >
-            <!-- From Uiverse.io by andrew-demchenk0 -->
             <div class="card" style="position: relative">
-              <!-- From Uiverse.io by catraco -->
               <div
                 class="heart-container"
                 title="Like"

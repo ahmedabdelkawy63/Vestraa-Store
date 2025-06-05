@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'desPipe',
-  standalone: true, // << هادي مهمة عشان تقدر تستوردها في imports
+  standalone: true,
 })
 export class DesPipePipe implements PipeTransform {
   transform(desc: string, wordLimit: number = 15): string {

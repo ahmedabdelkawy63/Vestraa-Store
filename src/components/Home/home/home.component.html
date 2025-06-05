@@ -36,8 +36,6 @@
       </ul>
 
       <div class="d-flex align-items-center gap-3">
-        <!-- Social Icons -->
-        <!-- From Uiverse.io by david-mohseni -->
         <ul class="wrapper d-flex">
           <a href="https://facebook.com" target="_blank">
             <li class="icon facebook">
@@ -90,7 +88,6 @@
           </a>
         </ul>
 
-        <!-- Login & Register Buttons -->
         <app-loader *ngIf="isLoading(); else ready"></app-loader>
         <ng-template #ready>
           @if (!isloged()) {
@@ -179,8 +176,7 @@
 <section id="products" class="py-5">
   <div class="container">
     <h2 class="text-center mb-4">Latest Products</h2>
-    <div class="row justify-content-center g-4">
-      <!-- كارت منتج -->
+    <div class="row con justify-content-center g-4">
       @for (prd of products; track $index) {
       <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
         <div

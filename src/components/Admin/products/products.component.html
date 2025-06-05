@@ -1,6 +1,5 @@
 <app-sidebar></app-sidebar>
 <div style="width: 1200px; margin-left: 290px" class="d-block">
-  <!-- From Uiverse.io by kosedagyazilim -->
   <button
     [routerLink]="['/dashboard/AddProduct']"
     routerLinkActive="router-link-active"
@@ -40,7 +39,6 @@
         <td>{{ prd.quantity }}</td>
 
         <td>
-          <!-- From Uiverse.io by vinodjangid07 -->
           <div class="d-flex justify-content-center">
             <button (click)="editProduct(prd.docId)" class="Btn">
               Edit
@@ -53,7 +51,6 @@
           </div>
         </td>
         <td>
-          <!-- From Uiverse.io by absoluteSTrange -->
           <button (click)="openDeleteModal(prd.docId, i)" class="buttonDelete">
             Delete
           </button>
@@ -62,7 +59,6 @@
       }
     </tbody>
   </table>
-  <!-- Delete Confirmation Modal -->
   <div *ngIf="showDeleteModal" class="overlay"></div>
 
   <div class="cardDelete" *ngIf="showDeleteModal">

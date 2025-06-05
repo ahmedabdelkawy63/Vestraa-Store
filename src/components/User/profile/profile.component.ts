@@ -15,8 +15,7 @@ export class ProfileComponent {
   firestore = inject(Firestore);
   uid = localStorage.getItem('uid');
 
-  userData: any = null; // هذا المتغير سيحمل بيانات اليوزر
-
+  userData: any = null;
   constructor() {
     if (this.uid) {
       const userRef = doc(this.firestore, `users/${this.uid}`);

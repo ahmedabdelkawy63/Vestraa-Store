@@ -53,46 +53,13 @@ import { MyOrdersComponent } from '../components/User/my-orders/my-orders.compon
 export class AppComponent implements OnInit {
   private router = inject(Router);
 
-  ngOnInit(): void {
-    // this.myAuth.user$.subscribe((user) => {
-    //   if (user) {
-    //     this.myAuth.currentUserSig.set({
-    //       email: user.email!,
-    //       name: user.displayName!,
-    //     });
-    //     if (user.email === 'owner@admin.com') {
-    //       this.router.navigate(['/dashboard/statistics']);
-    //     } else {
-    //       this.router.navigate(['/home']);
-    //     }
-    //   } else {
-    //     this.myAuth.currentUserSig.set(null);
-    //     this.router.navigate(['/login']);
-    //   }
-    //   console.log(this.myAuth.currentUserSig());
-    // });
-  }
+  ngOnInit(): void {}
 
   title = 'vestraa';
-  // constructor(private myAuthService: AuthService) {}
-
-  // ngOnInit(): void {
-  //   this.myAuthService.user$.subscribe((user) => {
-  //     if (user) {
-  //       this.myAuthService.currentUserSig.set({
-  //         email: user.email!,
-  //         name: user.displayName!,
-  //       });
-  //     } else {
-  //       this.myAuthService.currentUserSig.set(null);
-  //     }
-  //   });
-  //   console.log(this.myAuthService.currentUserSig());
-  // }
 
   myAuth = inject(AuthService);
   logout(): void {
-    localStorage.removeItem('uid'); // 🧹 امسح uid
+    localStorage.removeItem('uid');
 
     this.myAuth.logout();
   }

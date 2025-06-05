@@ -18,11 +18,9 @@ export class HeaderComponent {
 
   private router = inject(Router);
 
-  // ✅ Signal لحالة تسجيل الدخول، مربوطة بالـ AuthService
-
   logout() {
     this.authService.logout().subscribe(() => {
-      localStorage.removeItem('uid'); // 🧹 امسح uid
+      localStorage.removeItem('uid');
 
       this.router.navigate(['/login']);
     });
