@@ -271,3 +271,108 @@
   transition-duration: 0.5s;
   transform: rotate(160deg);
 }
+@media (max-width: 766px) {
+  .master-container {
+    padding: 0 10px;
+    margin: 20px 0;
+  }
+
+  .card {
+    width: 95% !important;
+    margin: 0 auto 15px auto;
+    padding: 16px;
+  }
+
+  .product {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .product-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .product-info {
+    padding: 0;
+    text-align: center;
+  }
+
+  .product-title {
+    font-size: 15px;
+  }
+
+  .quantity {
+    justify-content: center;
+  }
+
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .price {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .checkout--footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .checkout--footer .price {
+    font-size: 20px;
+  }
+
+  .checkout-btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .detail-row {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices - phones */
+@media (max-width: 480px) {
+  .card {
+    width: 98% !important;
+    padding: 12px;
+  }
+
+  .product-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .product-title {
+    font-size: 14px;
+  }
+
+  .product-brand,
+  .product-category {
+    font-size: 12px;
+  }
+
+  .quantity-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .quantity-value {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .checkout--footer .price {
+    font-size: 18px;
+  }
+}
